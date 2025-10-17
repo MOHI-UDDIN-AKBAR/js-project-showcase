@@ -106,6 +106,7 @@ body {
   color: var(--color-primary);
   display: grid;
   place-items: center;
+  margin: 0 auto;
 }
 
 .container {
