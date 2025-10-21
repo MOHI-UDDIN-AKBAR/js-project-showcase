@@ -48,7 +48,6 @@ function filterMenuItemsByCategory(category) {
 }
 
 // Event Listener
-
 categoryButtons.forEach((category) => {
   category.addEventListener("click", () => {
     const selectedCategory = category.textContent.trim().toLowerCase();
@@ -58,5 +57,4 @@ categoryButtons.forEach((category) => {
 });
 
 //  Initial Render
-
 document.addEventListener("DOMContentLoaded", () => renderMenuItems(menu));
