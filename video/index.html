@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script src="./app.js" defer type="text/javascript"></script>
+  </head>
+  <body>
+    <main class="video-section">
+      <figure class="video-player">
+        <video muted autoplay class="video-player__media">
+          <source
+            src="https://cdn.pixabay.com/video/2023/02/25/152085-802335503_large.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <figcaption class="video-player__overlay">
+          <h1 class="video-player__title">Video Project</h1>
+          <div class="video-player__controls">
+            <button
+              type="button"
+              class="video-player__btn video-player__btn-play active-btn"
+            >
+              Play
+            </button>
+            <button
+              type="button"
+              class="video-player__btn video-player__btn-pause"
+            >
+              Pause
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+    </main>
+  </body>
+</html>
