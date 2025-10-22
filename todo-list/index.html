@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script src="./app.js" defer type="text/javascript"></script>
+  </head>
+  <body>
+    <main class="todo-list">
+      <p class="todo-list__notify"></p>
+      <section class="todo-list__body">
+        <header class="todo-list__header">
+          <h1 class="todo-list__title">Grocery Bud</h1>
+        </header>
+        <form class="todo-list__form">
+          <label for="todo-input" class="todo-list__form-label">
+            <input
+              type="text"
+              name="todo"
+              id="todo-input"
+              placeholder="e.g. Milk"
+              class="todo-list__form-field"
+            />
+          </label>
+          <button type="submit" class="todo-list__form-submit-btn">
+            Submit
+          </button>
+        </form>
+        <article class="todos">
+          <ul class="todos__list"></ul>
+        </article>
+        <button type="button" class="todo-list__clear-btn">Clear All</button>
+      </section>
+    </main>
+  </body>
+</html>

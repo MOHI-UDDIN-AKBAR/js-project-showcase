@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+/* Reset  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Variables  */
+:root {
+  /* COLOR SYSTEM */
+  --color-primary: #503217;
+  --color-secondary: #7f6a55d5;
+  --color-accent: #a1ced1;
+  --color-error: rgb(172, 89, 89);
+
+  --color-bg-primary: #eeede7;
+  --color-bg-secondary: #503217;
+  --color-bg-accent: #a1ced1;
+  --color-bg-success: rgba(147, 207, 147, 0.823);
+  --color-bg-error: rgb(186, 139, 139);
+  --color-bg-todo-item: rgb(255, 255, 255);
+  --color-border: #877460;
+  --color-light: #eeede7;
+  --color-dark: #000000;
+
+  /* TYPOGRAPHY */
+  --font-primary: "EB Garamond", serif;
+  --font-secondary: "Inter", sans-serif;
+  --font-accent: "SUSE Mono", sans-serif;
+  --font-logo: "Lilita One", cursive;
+
+  --text-base-size: 1rem;
+  --text-small: 0.875rem;
+  --text-large: 1.5rem;
+  --text-xl: 2rem;
+
+  /* SPACING & LAYOUT */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  --container-max-width: 1200px;
+
+  /* BREAKPOINTS */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-laptop: 1024px;
+  --bp-desktop: 1280px;
+}
+
+body {
+  max-width: var(--container-max-width);
+  min-height: 100dvh;
+  margin: 0 auto;
+  background-color: var(--color-bg-primary);
+  line-height: 1.6;
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+}
+
+.todo-list {
+  width: 60%;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-md);
+  background-color: #f6f5f1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding-bottom: var(--spacing-lg);
+}
+
+.todo-list__notify {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: var(--text-small);
+  width: 70%;
+  text-align: center;
+  margin: var(--spacing-sm) auto;
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  visibility: hidden;
+}
+
+.success {
+  visibility: visible;
+  background-color: var(--color-bg-success);
+}
+
+.error {
+  visibility: visible;
+  background-color: var(--color-bg-error);
+}
+
+.todo-list__body {
+  width: 80%;
+  display: grid;
+  place-items: center;
+  gap: var(--spacing-md);
+}
+
+.todo-list__title {
+  padding: var(--spacing-xs);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: var(--text-large);
+}
+
+.todo-list__form {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  justify-content: space-between;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+}
+
+.todo-list__form-label {
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+.todo-list__form-field {
+  padding: var(--spacing-sm);
+  color: var(--color-primary);
+  font-size: var(--text-small);
+  border: none;
+}
+
+.todo-list__form-field::placeholder {
+  font-size: var(--text-small);
+  color: var(--color-secondary);
+}
+
+.todo-list__form-field:focus {
+  outline: none;
+}
+
+.todo-list__form-submit-btn {
+  background-color: var(--color-bg-accent);
+  font-family: var(--font-accent);
+  font-weight: bold;
+  font-size: var(--text-small);
+}
+
+.todos {
+  width: 80%;
+}
+
+.todos__list {
+  width: 100%;
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.todos__item {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  align-items: center;
+  padding: var(--spacing-xs);
+}
+
+.todos__item:hover {
+  background-color: var(--color-bg-todo-item);
+}
+
+.todos__item-name {
+  text-transform: capitalize;
+  font-family: var(--font-primary);
+  font-size: var(--text-small);
+}
+.todos__controls {
+  width: 100%;
+  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.todo-list__clear-btn {
+  width: 80%;
+  padding: var(--spacing-sm);
+  font-family: var(--font-logo);
+  color: var(--color-error);
+  margin-bottom: var(--spacing-md);
+  border: 2px solid var(--color-bg-error);
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 748px) {
+  .todo-list {
+    width: 100%;
+  }
+
+  .todo-list__body {
+    width: 100%;
+  }
+
+  .todo-list__form {
+    width: 90%;
+    grid-template-columns: 5fr 2fr;
+  }
+
+  .todos {
+    width: 90%;
+  }
+
+  .todo-list__clear-btn {
+    width: 90%;
+  }
+}
