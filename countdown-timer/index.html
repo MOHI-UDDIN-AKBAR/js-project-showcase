@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script src="./app.js" defer type="text/javascript"></script>
+  </head>
+  <body>
+    <main class="countdown-timer">
+      <figure class="countdown-timer__figure">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aXBob25lfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=700"
+          alt="Iphone"
+          class="countdown-timer__image"
+          loading="lazy"
+        />
+        <figcaption class="countdown-timer__content">
+          <header class="countdown-timer__header">
+            <h1 class="countdown-timer__title">Old iphone giveaway</h1>
+            <p class="countdown-timer__end-date">
+              giveaway ends on
+              <time class="countdown-timer__date"></time>
+            </p>
+          </header>
+          <p class="countdown-timer__description">
+            The latest iPhone is now on limited-time sale! Grab your favorite
+            model at an exclusive discount before the offer ends. The countdown
+            is on — don’t miss your chance to upgrade!
+          </p>
+          <div class="countdown-timer__countdown">
+            <div class="countdown-timer-unit">
+              <span class="countdown-timer__number" id="days">00</span>
+              <span class="countdown-timer__label">Days</span>
+            </div>
+            <div class="countdown-timer-unit">
+              <span class="countdown-timer__number" id="hours">00</span>
+              <span class="countdown-timer__label">Hours</span>
+            </div>
+            <div class="countdown-timer-unit">
+              <span class="countdown-timer__number" id="minutes">00</span>
+              <span class="countdown-timer__label">minutes</span>
+            </div>
+            <div class="countdown-timer-unit">
+              <span class="countdown-timer__number" id="seconds">00</span>
+              <span class="countdown-timer__label">Seconds</span>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
+    </main>
+  </body>
+</html>
