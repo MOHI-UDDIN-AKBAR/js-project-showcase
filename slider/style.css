@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+/* Reset  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Variables  */
+:root {
+  /* COLOR SYSTEM */
+  --color-primary: #000000;
+  --color-secondary: rgb(128, 128, 128);
+  --color-accent: #a1ced1;
+
+  --color-bg-primary: #e9e7dc;
+  --color-bg-secondary: #f7f6f2;
+  --color-bg-accent: #a1ced1;
+
+  --color-border: #877460;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+
+  /* TYPOGRAPHY */
+  --font-primary: "EB Garamond", serif;
+  --font-secondary: "Inter", sans-serif;
+  --font-accent: "SUSE Mono", sans-serif;
+  --font-logo: "Lilita One", cursive;
+
+  --text-base-size: 1rem;
+  --text-small: 0.875rem;
+  --text-large: 1.5rem;
+  --text-xl: 2rem;
+
+  /* SPACING & LAYOUT */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  --container-max-width: 1200px;
+
+  /* BREAKPOINTS */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-laptop: 1024px;
+  --bp-desktop: 1280px;
+}
+
+body {
+  max-width: var(--container-max-width);
+  min-height: 100dvh;
+  margin: 0 auto;
+  background-color: var(--color-bg-primary);
+  line-height: 1.6;
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  /* border: 2px solid red; */
+}
+
+.slider {
+  display: grid;
+  place-items: center;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.carousel {
+  width: 25rem;
+  height: 15.625rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100%, 1fr));
+  overflow: hidden;
+}
+
+.carousel__slide {
+  position: relative;
+  place-items: center;
+  left: 0%;
+  transition: left 0.2s linear;
+  overflow: hidden;
+}
+
+.right-to-left {
+  left: 100%;
+}
+
+.left-to-right {
+  left: -100%;
+}
+
+.transition {
+  left: 0%;
+  transform: translateX(0rem);
+}
+
+.is-active {
+  display: grid;
+}
+
+.carousel__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel__caption {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-light);
+  font-size: var(--text-large);
+  font-weight: bolder;
+}
+
+.carousel__controls {
+  margin: var(--spacing-md) auto;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.carousel__btn {
+  font-family: var(--font-secondary);
+  font-size: var(--text-base-size);
+  padding: var(--spacing-sm) var(--spacing-xs);
+  color: var(--color-secondary);
+}
+
+.carousel__btn:hover {
+  color: var(--color-primary);
+}
+
+.hide-carousel__btn {
+  display: none;
+}
+
+@media (max-width: 748px) {
+  .carousel {
+    width: 20rem;
+    height: 12.625rem;
+  }
+}
